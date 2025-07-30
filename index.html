@@ -1,14 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Simple 360 Sky</title>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"></a-sky>
-      <a-camera></a-camera>
-    </a-scene>
-  </body>
-</html>
+var APP_DATA = {
+  "scenes": [
+    {
+      "id": "example",
+      "name": "Example Panorama",
+      "levels": [
+        {
+          "tileSize": 512,
+          "size": 512,
+          "fallbackOnly": true,
+          "tileSize": 512,
+          "size": 512,
+          "path": ""
+        }
+      ],
+      "faceSize": 512,
+      "initialViewParameters": {
+        "yaw": 0,
+        "pitch": 0,
+        "fov": 1.5708
+      },
+      "type": "equirectangular",
+      "panorama": "https://www.marzipano.net/media/equirectangular/field.jpg"
+    }
+  ]
+};
