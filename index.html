@@ -2,18 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>360° VR Viewer</title>
+    <title>Simple 360 Sky</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-assets>
-        <video id="demo360" autoplay loop crossorigin="anonymous" playsinline
-          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"></video>
-      </a-assets>
-
-      <a-videosphere src="#demo360"></a-videosphere>
-      <a-camera wasd-controls-enabled="false" look-controls="true"></a-camera>
+      <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"></a-sky>
+      <a-camera></a-camera>
     </a-scene>
   </body>
 </html>
