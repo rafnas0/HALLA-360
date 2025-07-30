@@ -1,27 +1,37 @@
-var APP_DATA = {
-  "scenes": [
-    {
-      "id": "example",
-      "name": "Example Panorama",
-      "levels": [
-        {
-          "tileSize": 512,
-          "size": 512,
-          "fallbackOnly": true
-        },
-        {
-          "tileSize": 512,
-          "size": 1024
-        }
-      ],
-      "faceSize": 1024,
-      "initialViewParameters": {
-        "yaw": 0,
-        "pitch": 0,
-        "fov": 1.5708
-      },
-      "type": "equirectangular",
-      "panorama": "https://www.marzipano.net/media/equirectangular/field.jpg"
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marzipano VR Demo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body { margin:0; height:100%; overflow:hidden; }
+    #pano { width:100%; height:100%; }
+    #vrToggle {
+      position: absolute; top: 10px; right: 10px; z-index: 10;
+      background: rgba(0,0,0,0.5); color: white; padding: 8px 12px;
+      cursor: pointer; font-family: sans-serif; border-radius: 4px;
+      user-select: none;
     }
-  ]
-};
+  </style>
+</head>
+<body>
+  <div id="pano"></div>
+  <div id="vrToggle">Enter VR</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marzipano@0.9.3/dist/marzipano.min.js"></script>
+  <script>
+    // Create viewer
+    var viewer = new Marzipano.Viewer(document.getElementById('pano'));
+
+    // Create source from a public panorama image
+    var source = Marzipano.ImageUrlSource.fromString(
+      "https://www.marzipano.net/media/equirectangular/field.jpg"
+    );
+
+    // Create geometry
+    var geometry = new Marzipano.EquirectGeometry([{ width: 4000 }]);
+
+    // Create view limiter and initial view para
+
+    
